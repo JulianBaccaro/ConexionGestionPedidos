@@ -1,0 +1,39 @@
+﻿<Window x:Class="ConexionGestionPedidos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConexionGestionPedidos"
+        mc:Ignorable="d"
+        Activated="Window_Activated"
+        Title="MainWindow" Height="670" Width="948">
+
+    <Grid Margin="0,10,-244,-6" Background="#FF5C7C9E">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Clientes" HorizontalAlignment="Left" Margin="34,90,0,0" VerticalAlignment="Top" Width="85" Height="55" FontSize="22" Grid.ColumnSpan="2"/>
+        <ListBox Name  ="ListaClientes" d:ItemsSource="{d:SampleData ItemCount=5}"  Grid.ColumnSpan="2" MouseDoubleClick="ListaClientes_MouseDoubleClick"  Margin="18,175,371,263" RenderTransformOrigin="0.5,0.5">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.448"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1.705"/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+        <Label Grid.Column="1" Content="Pedidos" HorizontalAlignment="Left" Margin="286,95,0,0" VerticalAlignment="Top" FontSize="22" Height="45"/>
+        <ListBox Name ="pedidosCliente"  Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="251,177,129,260"/>
+        <ListBox Name ="todos_los_pedidos" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="508,177,382,260" Grid.ColumnSpan="2"/>
+        <Button Content="ELIMINAR" Grid.Column="2"  HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="134" Height="37" Click="Button_Click"/>
+        <Button Content="Insertar" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,426,0,0" VerticalAlignment="Top" Height="75" Width="96" FontSize="22" Click="Button_Click_1"/>
+        <Button Content="Borrar
+" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="194,426,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.579,0.894" Height="75" Width="104" FontSize="22" Click="Button_Click_2"/>
+        <TextBox Name ="txtInsertaCliente" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,560,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="218" Height="40"/>
+        <Button Content="Actualizar" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="359,426,0,0" VerticalAlignment="Top" Width="125" Height="75" FontSize="22" Click="Button_Click_3"/>
+
+    </Grid>
+</Window>
